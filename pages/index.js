@@ -8,7 +8,7 @@ export default function Home() {
       <LifeNavbar variant="homepage"></LifeNavbar>
       <h1 className={styles.title}>Life Completeness</h1>
       <h2 className={styles.subTitle}>Live life to the fullest</h2>
-      <LifeButton margin="30px"/>
+      <LifeButton margin="1.5rem"/>
       
       <img src="/background.jpg" className={styles.background}>
       </img>
