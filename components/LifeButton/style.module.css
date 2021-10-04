@@ -1,0 +1,19 @@
+.button {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 13px;
+
+    padding: 16px 50px;
+    background-color: #C5E3D7;
+
+    transition: transform 0.3s ease;
+}
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
