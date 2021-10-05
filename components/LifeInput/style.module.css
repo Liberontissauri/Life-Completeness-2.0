@@ -1,0 +1,15 @@
+.input {
+    border: none;
+    border-radius: 13px;
+
+    background-color: #EAEAEA;
+    padding: 20px 10px;
+    min-width: 285px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #1D1D1D;
+    text-align: center;
+}
