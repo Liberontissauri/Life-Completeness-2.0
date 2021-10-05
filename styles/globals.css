@@ -10,3 +10,7 @@
 body {
   background-color: #1D1D1D;
 }
+
+button:focus, input:focus {
+  outline: none;
+}
