@@ -5,6 +5,8 @@
     font-size: 1.3rem;
     color: #FFFFFF;
 
+    min-width: 200px;
+
     border: none;
     border-radius: 13px;
 
@@ -16,4 +18,7 @@
 .button:hover {
     cursor: pointer;
     transform: scale(1.05);
+}
+.dark {
+    color: #1D1D1D;
 }
