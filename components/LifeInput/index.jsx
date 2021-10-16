@@ -9,7 +9,7 @@ function LifeInput(props) {
     }
     return (
         <div style={{margin: props.margin}}>
-            <input className={styles.input} onKeyPress={changeLetter}></input>
+            <input className={styles.input} onKeyPress={changeLetter} onChange={(e) => props.onChange(e.target.value)}></input>
         </div>
     )
 }
