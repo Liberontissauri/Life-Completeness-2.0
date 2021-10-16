@@ -1,0 +1,14 @@
+.outerBar {
+    width: 300px;
+    height: 15px;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 13px;
+}
+.innerBar {
+    width: 50%;
+    height: 100%;
+    background-color: #C5E3D7;
+    border: none;
+    border-radius: 13px;
+}
