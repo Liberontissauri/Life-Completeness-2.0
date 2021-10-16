@@ -8,9 +8,13 @@ import { useRouter } from 'next/router'
 function SexSelection() {
     const router = useRouter();
     function selectMale() {
+        const storage = window.localStorage
+        storage.setItem("sex", "male")
         router.push("/ageSelection")
     }
     function selectFemale() {
+        const storage = window.localStorage
+        storage.setItem("sex", "female")
         router.push("/ageSelection")
     }
     return (
