@@ -26,19 +26,40 @@ function Results(props) {
     function calculatePercentageLived(age, life_expectancy) {
         return Math.floor((age / life_expectancy) * 100)
     }
+    function convertYearMonth(years) {
+        return years * 12
+    }
+    function convertYearWeek(years) {
+        return Math.floor((years * 365) / 7)
+    }
+    function convertYearDay(years) {
+        return years * 365
+    }
+    function convertYearHour(years) {
+        return years * 365 * 24
+    }
+    function convertYearMinute(years) {
+        return years * 365 * 24 * 60
+    }
+    function convertYearSecond(years) {
+        return years * 365 * 24 * 60 * 60
+    }
+    function formatNumbers(number) {
+        return number.toLocaleString()
+    }
     return (
         <div className={styles.container}>
             <LifeNavbar variant="quiz"></LifeNavbar>
             <h1 className={styles.title}>Congrats, you have lived {calculatePercentageLived(age, generateLifeExpectancy(sex, props.geo_data.country, props.life_data))}% of your life!</h1>
-            <h2 className={styles.subTitle}>This information was estimated using data from worldometers.info</h2>
+            <h2 className={styles.subTitle}>This information was estimated using data from <a href="https://worldometers.info">worldometers.info</a></h2>
             <LifeProgressBar percentage={calculatePercentageLived(age, generateLifeExpectancy(sex, props.geo_data.country, props.life_data))} margin={"0 0 40px 0"}></LifeProgressBar>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
-            <h3 className={styles.statisticEntry}>You have lived for 45 years.</h3>
+            <h3 className={styles.statisticEntry}>You have lived for <span className={styles.highlighted}>{formatNumbers(age)} years.</span></h3>
+            <h3 className={styles.statisticEntry}>You have been alive for <span className={styles.highlighted}>{formatNumbers(convertYearMonth(age))} months.</span></h3>
+            <h3 className={styles.statisticEntry}>You have lived for <span className={styles.highlighted}>{formatNumbers(convertYearWeek(age))} weeks.</span></h3>
+            <h3 className={styles.statisticEntry}>You have been alive for <span className={styles.highlighted}>{formatNumbers(convertYearDay(age))} days.</span></h3>
+            <h3 className={styles.statisticEntry}><span className={styles.highlighted}>{formatNumbers(convertYearHour(age))} hours</span> have passed by since you were born.</h3>
+            <h3 className={styles.statisticEntry}>You have Lived for <span className={styles.highlighted}>{formatNumbers(convertYearMinute(age))} minutes.</span></h3>
+            <h3 className={styles.statisticEntry}>You have been alive for <span className={styles.highlighted}>{formatNumbers(convertYearSecond(age))} Seconds.</span></h3>
             <LifeButton text="Share!" variant="dark" margin="35px"></LifeButton>
         </div>
     )
