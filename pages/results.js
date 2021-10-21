@@ -20,6 +20,13 @@ function Results(props) {
         setSex(storage.getItem("sex"))
     })
 
+    function getTitle(age, sex, country, data) {
+        if (calculatePercentageLived(age, generateLifeExpectancy(sex, country, data)) <= 100) {
+            return `Congrats, you have lived ${calculatePercentageLived(age, generateLifeExpectancy(sex, country, data))}% of your life!`
+        }
+        return `Congrats, you have lived ${calculatePercentageLived(age, generateLifeExpectancy(sex, country, data)) - 100}% past the life expectation in your country!`
+    }
+
     function generateLifeExpectancy(sex, country, country_data) {
         return parseFloat(Math.floor(country_data[country][sex]))
     }
@@ -50,7 +57,7 @@ function Results(props) {
     return (
         <div className={styles.container}>
             <LifeNavbar variant="quiz"></LifeNavbar>
-            <h1 className={styles.title}>Congrats, you have lived {calculatePercentageLived(age, generateLifeExpectancy(sex, props.geo_data.country, props.life_data))}% of your life!</h1>
+            <h1 className={styles.title}>{getTitle(age, sex, props.geo_data.country, props.life_data)}</h1>
             <h2 className={styles.subTitle}>This information was estimated using data from <a href="https://worldometers.info">worldometers.info</a></h2>
             <LifeProgressBar percentage={calculatePercentageLived(age, generateLifeExpectancy(sex, props.geo_data.country, props.life_data))} margin={"0 0 40px 0"}></LifeProgressBar>
             <h3 className={styles.statisticEntry}>You have lived for <span className={styles.highlighted}>{formatNumbers(age)} years.</span></h3>
