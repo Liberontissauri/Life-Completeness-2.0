@@ -67,7 +67,6 @@ function Results(props) {
             <h3 className={styles.statisticEntry}><span className={styles.highlighted}>{formatNumbers(convertYearHour(age))} hours</span> have passed by since you were born.</h3>
             <h3 className={styles.statisticEntry}>You have Lived for <span className={styles.highlighted}>{formatNumbers(convertYearMinute(age))} minutes.</span></h3>
             <h3 className={styles.statisticEntry}>You have been alive for <span className={styles.highlighted}>{formatNumbers(convertYearSecond(age))} Seconds.</span></h3>
-            <LifeButton text="Share!" variant="dark" margin="35px"></LifeButton>
         </div>
     )
 }
